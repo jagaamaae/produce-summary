@@ -1,43 +1,23 @@
-print("Day 1")
-the_file = open("um-deliveries-20140519.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
+def melon_count(day_number, path):
+    """Given day number & path to the deliveries, produces a report. Opens the deliveries file at different paths, 
+    processes each line, generates report in all uppercase.
+    """
 
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
+    print("Day", day_number)
+    delivery_log = open(path)
 
-    print("Delivered {} {}s for total of ${}".format(
-        count, melon, amount))
-the_file.close()
+    for line in delivery_log:
+        line = line.rstrip()
+        words = line.split('|')
 
+        melon, count, amount = words
 
-print("Day 2")
-the_file = open("um-deliveries-20140520.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
-
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
-
-    print("Delivered {} {}s for total of ${}".format(
-        count, melon, amount))
-the_file.close()
+        print (f"Delivered {count} {melon}s for a total of  $ {amount}")
 
 
-print("Day 3")
-the_file = open("um-deliveries-20140521.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
+    delivery_log.close()
 
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
 
-    print("Delivered {} {}s for total of ${}".format(
-        count, melon, amount))
-the_file.close()
+melon_count(1, "um-deliveries-20140519.txt")
+melon_count(2, "um-deliveries-20140520.txt")
+melon_count(3, "um-deliveries-20140521.txt")
