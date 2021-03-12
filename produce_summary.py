@@ -17,7 +17,6 @@ def melon_count(day_number, path):
 
     delivery_log.close()
 
-
 melon_count(1, "um-deliveries-20140519.txt")
 melon_count(2, "um-deliveries-20140520.txt")
 melon_count(3, "um-deliveries-20140521.txt")
